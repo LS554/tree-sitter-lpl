@@ -3,9 +3,42 @@
   "version": "0.1.0",
   "description": "Tree-sitter grammar for the LPL programming language",
   "main": "bindings/node",
+  "types": "bindings/node",
   "keywords": [
     "parser",
     "tree-sitter",
     "lpl"
+  ],
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ],
+  "dependencies": {
+    "node-gyp-build": "^4.8.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "prebuildify": "^6.0.0"
+  },
+  "scripts": {
+    "install": "node-gyp-build",
+    "prebuildify": "prebuildify --napi --strip"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.lpl",
+      "injection-regex": "^lpl$"
+    }
   ]
 }
