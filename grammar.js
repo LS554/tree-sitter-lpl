@@ -56,6 +56,7 @@ module.exports = grammar({
     include_directive: $ => seq(
       'include',
       choice($.system_lib_string, $.string_literal),
+      optional(';'),
     ),
 
     system_lib_string: $ => /<[^>]+>/,
