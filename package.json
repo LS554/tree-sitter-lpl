@@ -3,12 +3,9 @@
   "version": "0.1.0",
   "description": "Tree-sitter grammar for the LPL programming language",
   "main": "bindings/node",
-  "keywords": ["parser", "tree-sitter", "lpl"],
-  "tree-sitter": [
-    {
-      "scope": "source.lpl",
-      "file-types": ["lpl", "lph"],
-      "highlights": "queries/highlights.scm"
-    }
+  "keywords": [
+    "parser",
+    "tree-sitter",
+    "lpl"
   ]
 }
